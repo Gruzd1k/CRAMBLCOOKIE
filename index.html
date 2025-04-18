@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Печенька Кликер by:GruzD1k</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="settings-button" onclick="toggleSettings()">
+            ⚙️
+        </div>
+        <div class="settings-menu" id="settingsMenu">
+            <div class="settings-item">
+                <label>Громкость</label>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+            </div>
+            <div class="settings-item reset-button" onclick="resetGame()">
+                Сбросить игру
+            </div>
+        </div>
+        <div class="game-content">
+            <div class="left-panel">
+                <div class="stats">
+                    <p>Печенек: <span id="cookies">0</span></p>
+                    <p>Печенек в секунду: <span id="cps">0</span></p>
+                </div>
+                <div class="cookie-container">
+                    <img src="cookie.png" alt="Печенька" id="cookie" class="cookie">
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="upgrades">
+                    <h2>Улучшения</h2>
+                    <div class="upgrade can-afford" id="grandma" onclick="buyUpgrade('grandma')">
+                        <p>Бабушка</p>
+                        <p>+1 печенька в секунду</p>
+                        <div class="cost">Стоимость: <span>10</span> печенек</div>
+                    </div>
+                    <div class="upgrade" id="factory" onclick="buyUpgrade('factory')">
+                        <p>Фабрика</p>
+                        <p>+10 печенек в секунду</p>
+                        <div class="cost">Стоимость: <span>100</span> печенек</div>
+                    </div>
+                    <div class="upgrade" id="farm" onclick="buyUpgrade('farm')">
+                        <p>Ферма</p>
+                        <p>+50 печенек в секунду</p>
+                        <div class="cost">Стоимость: <span>500</span> печенек</div>
+                    </div>
+                    <div class="upgrade" id="mine" onclick="buyUpgrade('mine')">
+                        <p>Шахта</p>
+                        <p>+200 печенек в секунду</p>
+                        <div class="cost">Стоимость: <span>2000</span> печенек</div>
+                    </div>
+                    <div class="upgrade" id="shipment" onclick="buyUpgrade('shipment')">
+                        <p>Корабль</p>
+                        <p>+1000 печенек в секунду</p>
+                        <div class="cost">Стоимость: <span>10000</span> печенек</div>
+                    </div>
+                    <div class="upgrade" id="alchemy" onclick="buyUpgrade('alchemy')">
+                        <p>Алхимия</p>
+                        <p>+5000 печенек в секунду</p>
+                        <div class="cost">Стоимость: <span>50000</span> печенек</div>
+                    </div>
+                    <div class="upgrade" id="portal" onclick="buyUpgrade('portal')">
+                        <p>Портал</p>
+                        <p>+20000 печенек в секунду</p>
+                        <div class="cost">Стоимость: <span>200000</span> печенек</div>
+                    </div>
+                    <div class="upgrade" id="timeMachine" onclick="buyUpgrade('timeMachine')">
+                        <p>Машина времени</p>
+                        <p>+100000 печенек в секунду</p>
+                        <div class="cost">Стоимость: <span>1000000</span> печенек</div>
+                    </div>
+                </div>
+                <div class="achievements">
+                    <h2>Достижения</h2>
+                    <div class="achievement" id="firstClick">
+                        <p>Первый клик</p>
+                        <p>+1% к кликам</p>
+                        <div class="progress">Прогресс: <span>0</span>/1</div>
+                    </div>
+                    <div class="achievement" id="cookieMaster">
+                        <p>Мастер печенек</p>
+                        <p>+5% к кликам</p>
+                        <div class="progress">Прогресс: <span>0</span>/1000</div>
+                    </div>
+                    <div class="achievement" id="grandmaLover">
+                        <p>Любитель бабушек</p>
+                        <p>+10% к бабушкам</p>
+                        <div class="progress">Прогресс: <span>0</span>/10</div>
+                    </div>
+                    <div class="achievement" id="factoryOwner">
+                        <p>Владелец фабрики</p>
+                        <p>+15% к фабрикам</p>
+                        <div class="progress">Прогресс: <span>0</span>/5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Удалите этот дублирующийся блок (он в конце файла перед </div>) -->
+<div class="left-panel">
+    <div class="stats">
+        <p>Печенек: <span id="cookies">0</span></p>
+        <p>Печенек в секунду: <span id="cps">0</span></p>
+    </div>
+    <div class="cookie-container">
+        <img src="cookie.png" alt="Печенька" id="cookie" class="cookie">
+    </div>
+    <div class="click-upgrades">
+        <!-- ... -->
+    </div>
+</div>
+    <audio id="clickSound" src="click.mp3"></audio>
+    <audio id="upgradeSound" src="upgrade.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
