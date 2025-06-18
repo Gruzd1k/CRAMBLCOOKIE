@@ -12,13 +12,33 @@
         <div class="settings-button" onclick="toggleSettings()">
             ⚙️
         </div>
+        <div class="achievements-button" onclick="toggleAchievements()">
+            🏆
+        </div>
         <div class="settings-menu" id="settingsMenu">
             <div class="settings-item">
                 <label>Громкость</label>
                 <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
             </div>
+            <div class="settings-item test-sound-button" onclick="testSound()">
+                🔊 Тест звука
+            </div>
+            <div class="settings-item save-button" onclick="forceSave()">
+                💾 Сохранить игру
+            </div>
             <div class="settings-item reset-button" onclick="resetGame()">
                 Сбросить игру
+            </div>
+        </div>
+        <div class="achievements-modal" id="achievementsModal">
+            <div class="achievements-content">
+                <div class="achievements-header">
+                    <h2>🏆 Достижения</h2>
+                    <button class="close-button" onclick="toggleAchievements()" title="Закрыть">✕</button>
+                </div>
+                <div class="achievements-list" id="achievementsList">
+                    <!-- Достижения будут добавлены через JavaScript -->
+                </div>
             </div>
         </div>
         <div class="game-content">
@@ -26,6 +46,7 @@
                 <div class="stats">
                     <p>Печенек: <span id="cookies">0</span></p>
                     <p>Печенек в секунду: <span id="cps">0</span></p>
+                    <p class="last-save">Последнее сохранение: <span id="lastSave">Загрузка...</span></p>
                 </div>
                 <div class="cookie-container">
                     <img src="cookie.png" alt="Печенька" id="cookie" class="cookie">
@@ -100,21 +121,9 @@
                 </div>
             </div>
         </div>
-        <!-- Удалите этот дублирующийся блок (он в конце файла перед </div>) -->
-<div class="left-panel">
-    <div class="stats">
-        <p>Печенек: <span id="cookies">0</span></p>
-        <p>Печенек в секунду: <span id="cps">0</span></p>
     </div>
-    <div class="cookie-container">
-        <img src="cookie.png" alt="Печенька" id="cookie" class="cookie">
-    </div>
-    <div class="click-upgrades">
-        <!-- ... -->
-    </div>
-</div>
-    <audio id="clickSound" src="click.mp3"></audio>
-    <audio id="upgradeSound" src="upgrade.mp3"></audio>
+    <audio id="clickSound" src="click.mp3" preload="auto"></audio>
+    <audio id="upgradeSound" src="upgrade.mp3" preload="auto"></audio>
     <script src="script.js"></script>
 </body>
 </html>
